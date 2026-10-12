@@ -1,100 +1,344 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo Lada | Repuestos y Soluciones Especializadas</title>
+    <title>TODO LADA | Especialistas en Repuestos Lada 2121, 2106, 2105 y Samara</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ladaRed: '#DC2626',
+                        ladaRedHover: '#B91C1C',
+                        ladaYellow: '#F59E0B',
+                        ladaDark: '#0F172A',
+                        ladaCard: '#1E293B',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .font-tech { font-family: 'Chakra Petch', sans-serif; }
+        body { font-family: 'Inter', sans-serif; }
+    </style>
 </head>
-<body class="bg-slate-900 text-slate-100 font-sans">
+<body class="bg-slate-950 text-slate-100 min-h-screen flex flex-col selection:bg-red-600 selection:text-white">
 
-    <!-- Header / Navbar -->
-    <header class="bg-slate-950 border-b border-slate-800 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <span class="text-2xl font-black tracking-wider text-red-600">TODO LADA</span>
-            </div>
-            <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20estoy%20buscando%20un%20repuesto%20y%20necesito%20asesoría." target="_blank" 
-               class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2 rounded-lg text-sm transition flex items-center gap-2">
-               💬 WhatsApp Directo
+    <!-- BARRA SUPERIOR DE ANUNCIOS -->
+    <div class="bg-gradient-to-r from-red-700 via-red-600 to-amber-600 text-white text-xs md:text-sm font-semibold py-2 px-4 text-center tracking-wide shadow-md">
+        🚚 Envíos Garantizados a Nivel Nacional | ⚙️ Especialistas en LADA 2121 (Niva), 2106, 2105 y Samara
+    </div>
+
+    <!-- HEADER / NAVBAR -->
+    <header class="bg-slate-900/95 backdrop-blur border-b border-slate-800 sticky top-0 z-50 transition-all">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 flex items-center justify-between gap-4">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3 group">
+                <img src="logo.png" alt="Todo Lada Logo" class="h-12 w-auto object-contain drop-shadow-[0_0_10px_rgba(220,38,38,0.3)] group-hover:scale-105 transition-transform" onerror="this.style.display='none'; document.getElementById('alt-logo').style.display='block';">
+                <span id="alt-logo" class="hidden font-tech text-2xl font-bold tracking-wider text-red-600">TODO LADA</span>
             </a>
+
+            <!-- Buscador Rápido -->
+            <div class="flex-1 max-w-md hidden sm:block">
+                <div class="relative">
+                    <input type="text" id="searchInput" oninput="filtrarProductos()" placeholder="Buscar repuesto (ej: Bomba de agua, Carburador, Rótula)..." 
+                           class="w-full bg-slate-950 border border-slate-700 rounded-xl py-2 pl-10 pr-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500 transition">
+                    <svg class="w-5 h-5 text-slate-500 absolute left-3 top-2.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </div>
+
+            <!-- Botón Asesoría Directa -->
+            <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20necesito%20asesoría%20para%20un%20repuesto." target="_blank"
+               class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-4 py-2.5 rounded-xl text-xs md:text-sm transition flex items-center gap-2 shadow-lg shadow-emerald-600/20">
+                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.705 1.754zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981z"/></svg>
+                <span class="hidden md:inline">Contactar Asesor</span>
+            </a>
+        </div>
+
+        <!-- Buscador Móvil -->
+        <div class="sm:hidden px-4 pb-3">
+            <input type="text" id="searchInputMobile" oninput="syncMobileSearch()" placeholder="Buscar repuesto..." 
+                   class="w-full bg-slate-950 border border-slate-700 rounded-xl py-2 px-4 text-sm text-slate-200 placeholder-slate-500 focus:outline-none focus:border-red-500">
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative bg-gradient-to-r from-slate-950 via-slate-900 to-red-950 py-16 px-4 text-center border-b border-slate-800">
-        <div class="max-w-4xl mx-auto">
-            <span class="bg-red-600/20 text-red-400 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider border border-red-500/30">Especialistas en la Marca</span>
-            <h1 class="text-4xl md:text-6xl font-extrabold mt-4 tracking-tight">Repuestos Originales y Alternativos para <span class="text-red-500">Lada</span></h1>
-            <p class="mt-4 text-lg text-slate-300 max-w-2xl mx-auto">Niva, Samara, 2101 al 2107. Todo lo que tu vehículo clásico o de trabajo pesado necesita con envíos nacionales garantizados.</p>
-            <div class="mt-8 flex justify-center gap-4">
-                <a href="#catalogo" class="bg-red-600 hover:bg-red-500 text-white font-bold px-6 py-3 rounded-xl transition shadow-lg shadow-red-600/30">Ver Repuestos</a>
+    <!-- HERO SECTION -->
+    <section class="relative bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 py-12 md:py-16 px-4 border-b border-slate-800/80">
+        <div class="max-w-7xl mx-auto text-center">
+            <span class="inline-block bg-red-600/15 text-red-500 font-tech text-xs md:text-sm font-semibold px-4 py-1.5 rounded-full uppercase tracking-wider border border-red-500/30 mb-4">
+                ⚙️ Catálogo Especializado LADA
+            </span>
+            <h1 class="text-3xl md:text-5xl lg:text-6xl font-extrabold font-tech tracking-tight text-white leading-tight">
+                REPUESTOS PARA <span class="text-transparent bg-clip-text bg-gradient-to-r from-red-500 via-amber-500 to-red-600">TU LADA</span>
+            </h1>
+            <p class="mt-4 text-slate-400 text-sm md:text-base max-w-2xl mx-auto">
+                Selecciona tu modelo para filtrar piezas originales e importadas de alta durabilidad.
+            </p>
+
+            <!-- FILTRO POR MODELO EXCLUSIVO -->
+            <div class="mt-8 flex flex-wrap justify-center gap-3 max-w-4xl mx-auto">
+                <button onclick="filtrarModelo('todos')" id="btn-todos" class="btn-modelo active-modelo border border-slate-700 bg-red-600 text-white font-tech font-bold px-5 py-2.5 rounded-xl text-sm transition hover:scale-105 shadow-md">
+                    🚘 TODOS LOS MODELOS
+                </button>
+                <button onclick="filtrarModelo('2121')" id="btn-2121" class="btn-modelo border border-slate-800 bg-slate-900 hover:border-red-500 text-slate-300 font-tech font-bold px-5 py-2.5 rounded-xl text-sm transition hover:scale-105">
+                    ⛰️ LADA 2121 (NIVA)
+                </button>
+                <button onclick="filtrarModelo('2106')" id="btn-2106" class="btn-modelo border border-slate-800 bg-slate-900 hover:border-red-500 text-slate-300 font-tech font-bold px-5 py-2.5 rounded-xl text-sm transition hover:scale-105">
+                    🚗 LADA 2106
+                </button>
+                <button onclick="filtrarModelo('2105')" id="btn-2105" class="btn-modelo border border-slate-800 bg-slate-900 hover:border-red-500 text-slate-300 font-tech font-bold px-5 py-2.5 rounded-xl text-sm transition hover:scale-105">
+                    🚙 LADA 2105
+                </button>
+                <button onclick="filtrarModelo('samara')" id="btn-samara" class="btn-modelo border border-slate-800 bg-slate-900 hover:border-red-500 text-slate-300 font-tech font-bold px-5 py-2.5 rounded-xl text-sm transition hover:scale-105">
+                    🏎️ SAMARA
+                </button>
             </div>
         </div>
     </section>
 
-    <!-- Catálogo Destacado -->
-    <main id="catalogo" class="max-w-7xl mx-auto px-4 py-16">
-        <div class="flex justify-between items-center mb-8">
-            <h2 class="text-2xl font-bold tracking-tight border-l-4 border-red-600 pl-3">Catálogo de Piezas Frecuentes</h2>
+    <!-- CONTENIDO PRINCIPAL: CATEGORÍAS Y PRODUCTOS -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 py-12 flex-grow">
+
+        <!-- Banner de Filtro Activo -->
+        <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 gap-4 border-b border-slate-800 pb-4">
+            <div>
+                <h2 class="text-2xl font-tech font-bold text-white flex items-center gap-2">
+                    <span class="w-3 h-8 bg-red-600 rounded-full inline-block"></span>
+                    Catálogo de Repuestos Disponibles
+                </h2>
+                <p id="labelFiltro" class="text-xs text-slate-400 mt-1">Mostrando piezas para: <span class="text-amber-400 font-semibold">Todos los modelos</span></p>
+            </div>
+            
+            <!-- Contador de items -->
+            <span id="contadorProductos" class="text-xs font-mono bg-slate-900 border border-slate-800 text-slate-400 px-3 py-1.5 rounded-lg">
+                0 Repuestos encontrados
+            </span>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <!-- Producto 1 -->
-            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-500 transition flex flex-col">
-                <div class="h-48 bg-slate-900 flex items-center justify-center text-slate-500 font-mono text-sm border-b border-slate-700">
-                    [Foto Bomba de Agua Niva]
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <span class="text-xs text-red-400 font-semibold uppercase">Motor / Refrigeración</span>
-                    <h3 class="text-lg font-bold mt-1">Bomba de Agua Lada Niva 1.6 / 1.7</h3>
-                    <p class="text-sm text-slate-400 mt-2 flex-grow">Alta durabilidad, componente original importado para óptima temperatura de trabajo.</p>
-                    <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20estoy%20interesado%20en%20la%20Bomba%20de%20Agua%20para%20Niva." target="_blank"
-                       class="mt-6 block text-center bg-slate-700 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-xl transition">
-                       Consultar Disponibilidad
-                    </a>
-                </div>
-            </div>
+        <!-- GRID DE PRODUCTOS -->
+        <div id="gridProductos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            <!-- Los productos se cargan dinámicamente con JavaScript -->
+        </div>
 
-            <!-- Producto 2 -->
-            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-500 transition flex flex-col">
-                <div class="h-48 bg-slate-900 flex items-center justify-center text-slate-500 font-mono text-sm border-b border-slate-700">
-                    [Foto Kit Embrague]
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <span class="text-xs text-red-400 font-semibold uppercase">Transmisión</span>
-                    <h3 class="text-lg font-bold mt-1">Kit de Embrague Completo Lada Samara</h3>
-                    <p class="text-sm text-slate-400 mt-2 flex-grow">Incluye prensa, disco y balinera de excelente respuesta y suavidad en pedal.</p>
-                    <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20estoy%20interesado%20en%20el%20Kit%20de%20Embrague%20para%20Samara." target="_blank"
-                       class="mt-6 block text-center bg-slate-700 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-xl transition">
-                       Consultar Disponibilidad
-                    </a>
-                </div>
-            </div>
-
-            <!-- Producto 3 -->
-            <div class="bg-slate-800/50 border border-slate-700/60 rounded-2xl overflow-hidden hover:border-slate-500 transition flex flex-col">
-                <div class="h-48 bg-slate-900 flex items-center justify-center text-slate-500 font-mono text-sm border-b border-slate-700">
-                    [Foto Suspensión / Rotulas]
-                </div>
-                <div class="p-5 flex flex-col flex-grow">
-                    <span class="text-xs text-red-400 font-semibold uppercase">Suspensión / Dirección</span>
-                    <h3 class="text-lg font-bold mt-1">Juego de Rótulas de Suspensión Lada</h3>
-                    <p class="text-sm text-slate-400 mt-2 flex-grow">Diseñadas para soportar terrenos exigentes y caminos agrestes sin holguras.</p>
-                    <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20estoy%20interesado%20en%20el%20Juego%20de%20Rótulas." target="_blank"
-                       class="mt-6 block text-center bg-slate-700 hover:bg-emerald-600 text-white font-semibold py-2.5 rounded-xl transition">
-                       Consultar Disponibilidad
-                    </a>
-                </div>
-            </div>
+        <!-- Estado Vacio -->
+        <div id="sinResultados" class="hidden text-center py-16 bg-slate-900/40 border border-slate-800 rounded-2xl">
+            <div class="text-4xl mb-3">🔍</div>
+            <h3 class="text-lg font-bold text-slate-300 font-tech">No encontramos repuestos con esa búsqueda</h3>
+            <p class="text-sm text-slate-500 mt-1">Intenta con otro término o consulta directamente por WhatsApp.</p>
+            <a href="https://wa.me/573000000000?text=Hola%20Todo%20Lada,%20busco%20un%20repuesto%20que%20no%20encuentro%20en%20la%20página." target="_blank"
+               class="mt-4 inline-block bg-red-600 hover:bg-red-500 text-white font-bold text-xs px-5 py-2.5 rounded-xl transition">
+                Consultar por WhatsApp
+            </a>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-950 border-t border-slate-800 py-8 text-center text-slate-500 text-sm">
-        <p>© 2026 Todo Lada. Especialistas en repuestos automotrices.</p>
+    <!-- FOOTER -->
+    <footer class="bg-slate-950 border-t border-slate-800 py-10 px-4 mt-auto">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-slate-400 text-sm">
+            <div>
+                <h4 class="font-tech font-bold text-white text-lg mb-3 text-red-500">TODO LADA</h4>
+                <p class="text-xs leading-relaxed text-slate-400">
+                    Especialistas en importación y distribución de repuestos originales y homologados para vehículos Lada en Colombia y la región.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-tech font-bold text-white text-sm mb-3 uppercase tracking-wider">Modelos Atendidos</h4>
+                <ul class="text-xs space-y-2 font-mono text-slate-400">
+                    <li>• Lada 2121 Niva (1.6 / 1.7 / 1.7i)</li>
+                    <li>• Lada 2106 / 2105</li>
+                    <li>• Lada Samara (2108 / 2109)</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-tech font-bold text-white text-sm mb-3 uppercase tracking-wider">Atención Directa</h4>
+                <p class="text-xs text-slate-400">Despachos rápidos a nivel nacional.</p>
+                <div class="mt-3">
+                    <a href="https://wa.me/573000000000" target="_blank" class="text-xs text-emerald-400 font-bold hover:underline flex items-center gap-1">
+                        💬 Cotizar por WhatsApp
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto border-t border-slate-900 mt-8 pt-6 text-center text-xs text-slate-600 font-mono">
+            © Todo Lada - Todos los derechos reservados.
+        </div>
     </footer>
 
+    <!-- SCRIPT DE PRODUCTOS Y LÓGICA DE FILTRADO -->
+    <script>
+        // BASE DE DATOS DE REPUETOS (Fácil de editar o alimentar desde un JSON/API futuro)
+        const productos = [
+            {
+                id: 1,
+                nombre: "Bomba de Agua Lada Niva 1.6 / 1.7",
+                modelo: "2121",
+                categoria: "Motor",
+                referencia: "2107-1307010",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?auto=format&fit=crop&w=500&q=80",
+                destacado: true
+            },
+            {
+                id: 2,
+                nombre: "Kit de Embrague Completo Samara",
+                modelo: "samara",
+                categoria: "Transmisión",
+                referencia: "2108-1601000",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1619642751034-765dfdf7c58e?auto=format&fit=crop&w=500&q=80",
+                destacado: true
+            },
+            {
+                id: 3,
+                nombre: "Juego de Rótulas de Suspensión (4 Unidades)",
+                modelo: "2121",
+                categoria: "Suspensión",
+                referencia: "2101-2904185",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=500&q=80",
+                destacado: false
+            },
+            {
+                id: 4,
+                nombre: "Carburador Webert Lada 2106 / 2105",
+                modelo: "2106",
+                categoria: "Alimentación",
+                referencia: "2107-1107010",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=500&q=80",
+                destacado: false
+            },
+            {
+                id: 5,
+                nombre: "Stop Trasero Completo Lada Niva 2121",
+                modelo: "2121",
+                categoria: "Eléctrico / Carrocería",
+                referencia: "2121-3716010",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=500&q=80",
+                destacado: false
+            },
+            {
+                id: 6,
+                nombre: "Pastillas de Freno Delanteras Lada 2105/2106",
+                modelo: "2105",
+                categoria: "Frenos",
+                referencia: "2101-3501080",
+                precio: "Consultar",
+                imagen: "https://images.unsplash.com/photo-1600706432520-272ecaa0c313?auto=format&fit=crop&w=500&q=80",
+                destacado: false
+            }
+        ];
+
+        let modeloActivo = 'todos';
+
+        function renderizarProductos(lista) {
+            const grid = document.getElementById('gridProductos');
+            const sinRes = document.getElementById('sinResultados');
+            const contador = document.getElementById('contadorProductos');
+            
+            grid.innerHTML = '';
+            contador.innerText = `${lista.length} Repuestos encontrados`;
+
+            if(lista.length === 0) {
+                sinRes.classList.remove('hidden');
+                return;
+            } else {
+                sinRes.classList.add('hidden');
+            }
+
+            lista.forEach(prod => {
+                const card = document.createElement('div');
+                card.className = "bg-slate-900 border border-slate-800 rounded-2xl overflow-hidden hover:border-red-600/50 transition-all duration-300 hover:shadow-xl hover:shadow-red-600/10 flex flex-col group";
+
+                const msgWhatsApp = encodeURIComponent(`Hola Todo Lada, estoy interesado en el repuesto: ${prod.nombre} (Ref: ${prod.referencia}). ¿Tienen disponibilidad y precio?`);
+
+                card.innerHTML = `
+                    <div class="relative h-44 bg-slate-950 overflow-hidden">
+                        <img src="${prod.imagen}" alt="${prod.nombre}" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500 opacity-90 group-hover:opacity-100">
+                        <span class="absolute top-3 left-3 bg-slate-950/80 backdrop-blur text-red-400 font-mono text-[10px] uppercase font-bold px-2.5 py-1 rounded-md border border-red-500/30">
+                            ${prod.categoria}
+                        </span>
+                        <span class="absolute top-3 right-3 bg-amber-500/20 text-amber-300 font-tech text-xs font-bold px-2 py-0.5 rounded border border-amber-500/30">
+                            LADA ${prod.modelo.toUpperCase()}
+                        </span>
+                    </div>
+
+                    <div class="p-5 flex flex-col flex-grow">
+                        <div class="text-[11px] font-mono text-slate-500 mb-1">REF: ${prod.referencia}</div>
+                        <h3 class="font-tech text-base font-bold text-white group-hover:text-red-400 transition-colors leading-snug">
+                            ${prod.nombre}
+                        </h3>
+                        
+                        <div class="mt-auto pt-5">
+                            <a href="https://wa.me/573000000000?text=${msgWhatsApp}" target="_blank" 
+                               class="w-full bg-slate-800 hover:bg-emerald-600 text-slate-200 hover:text-white font-tech font-bold text-xs py-2.5 px-4 rounded-xl transition flex items-center justify-center gap-2 border border-slate-700/80 hover:border-emerald-500">
+                               <span>💬 Pedir Disponibilidad</span>
+                            </a>
+                        </div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function filtrarModelo(mod) {
+            modeloActivo = mod;
+            
+            // Estilos botones
+            document.querySelectorAll('.btn-modelo').forEach(btn => {
+                btn.classList.remove('bg-red-600', 'text-white', 'border-slate-700');
+                btn.classList.add('bg-slate-900', 'text-slate-300', 'border-slate-800');
+            });
+            const btnSel = document.getElementById(`btn-${mod}`);
+            if(btnSel) {
+                btnSel.classList.remove('bg-slate-900', 'text-slate-300', 'border-slate-800');
+                btnSel.classList.add('bg-red-600', 'text-white', 'border-slate-700');
+            }
+
+            // Actualizar Label
+            const label = document.getElementById('labelFiltro');
+            const nombresMod = {
+                'todos': 'Todos los modelos',
+                '2121': 'Lada 2121 (Niva)',
+                '2106': 'Lada 2106',
+                '2105': 'Lada 2105',
+                'samara': 'Lada Samara'
+            };
+            label.innerHTML = `Mostrando piezas para: <span class="text-amber-400 font-semibold">${nombresMod[mod]}</span>`;
+
+            filtrarProductos();
+        }
+
+        function filtrarProductos() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            
+            const filtrados = productos.filter(p => {
+                const coincideModelo = (modeloActivo === 'todos') || (p.modelo.toLowerCase() === modeloActivo);
+                const coincideBusqueda = p.nombre.toLowerCase().includes(query) || p.referencia.toLowerCase().includes(query) || p.categoria.toLowerCase().includes(query);
+                return coincideModelo && coincideBusqueda;
+            });
+
+            renderizarProductos(filtrados);
+        }
+
+        function syncMobileSearch() {
+            const val = document.getElementById('searchInputMobile').value;
+            document.getElementById('searchInput').value = val;
+            filtrarProductos();
+        }
+
+        // Carga inicial
+        document.addEventListener('DOMContentLoaded', () => {
+            renderizarProductos(productos);
+        });
+    </script>
 </body>
 </html>
