@@ -6,12 +6,10 @@
     <title>TODO LADA | Repuestos Lada en Bogotá - 2121, 2106, 2105 y Samara</title>
     <meta name="description" content="Repuestos originales y alternativos para Lada 2121 Niva, 2106, 2105 y Samara en Bogotá. Envíos a todo Colombia. Cotiza por WhatsApp.">
     
-    <!-- Open Graph (para que se vea bien al compartir en WhatsApp/Facebook) -->
     <meta property="og:title" content="TODO LADA | Repuestos Lada en Bogotá">
     <meta property="og:description" content="Repuestos originales para tu Lada. Cotiza fácil por WhatsApp.">
     <meta property="og:type" content="website">
 
-    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -31,10 +29,7 @@
         }
     </script>
 
-    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
 <body class="font-inter text-ladaDark bg-gray-50">
@@ -45,9 +40,6 @@
             <div class="flex items-center justify-between h-20">
                 <a href="#" class="flex items-center">
                     <img src="logo.png" alt="TODO LADA - Repuestos Lada Bogotá" class="h-14 w-auto">
-                    <span class="text-3xl font-chakra font-bold text-ladaRed">TODO</span>
-                    <span class="text-3xl font-chakra font-bold text-ladaDark">LADA</span>
-                    
                 </a>
 
                 <nav class="hidden md:flex items-center space-x-8">
@@ -68,7 +60,6 @@
             </div>
         </div>
 
-        <!-- Menú móvil -->
         <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-200 shadow-lg">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <a href="#inicio" class="block px-4 py-3 rounded-lg text-gray-700 font-medium hover:bg-gray-100">Inicio</a>
@@ -168,7 +159,7 @@
         </div>
     </section>
 
-    <!-- ===== CATEGORÍAS (SUBGRUPOS) ===== -->
+    <!-- ===== CATEGORÍAS ===== -->
     <section id="categorias" class="py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6 lg:px-8">
             <div class="text-center max-w-3xl mx-auto mb-14">
@@ -181,42 +172,42 @@
                 <button onclick="filtrarCategoria('motor')" class="grupo-categoria bg-gradient-to-br from-red-500 to-red-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-cogs text-4xl mb-3"></i>
                     <h3 class="font-chakra font-bold text-lg">Motor</h3>
-                    <p class="text-xs opacity-90 mt-1">Pistones, empaques</p>
+                    <p class="text-xs opacity-90 mt-1">Carburador, cadena</p>
                 </button>
                 <button onclick="filtrarCategoria('transmision')" class="grupo-categoria bg-gradient-to-br from-blue-500 to-blue-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-gears text-4xl mb-3"></i>
                     <h3 class="font-chakra font-bold text-lg">Transmisión</h3>
-                    <p class="text-xs opacity-90 mt-1">Caja, embrague</p>
-                </button>
-                <button onclick="filtrarCategoria('frenos')" class="grupo-categoria bg-gradient-to-br from-orange-500 to-orange-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
-                    <i class="fas fa-compact-disc text-4xl mb-3"></i>
-                    <h3 class="font-chakra font-bold text-lg">Frenos</h3>
-                    <p class="text-xs opacity-90 mt-1">Discos, pastillas</p>
+                    <p class="text-xs opacity-90 mt-1">Kit de clutch</p>
                 </button>
                 <button onclick="filtrarCategoria('suspension')" class="grupo-categoria bg-gradient-to-br from-purple-500 to-purple-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-car-side text-4xl mb-3"></i>
                     <h3 class="font-chakra font-bold text-lg">Suspensión</h3>
-                    <p class="text-xs opacity-90 mt-1">Amortiguadores</p>
+                    <p class="text-xs opacity-90 mt-1">Rótulas</p>
                 </button>
                 <button onclick="filtrarCategoria('electrico')" class="grupo-categoria bg-gradient-to-br from-yellow-500 to-yellow-600 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-bolt text-4xl mb-3"></i>
                     <h3 class="font-chakra font-bold text-lg">Eléctrico</h3>
-                    <p class="text-xs opacity-90 mt-1">Alternadores</p>
+                    <p class="text-xs opacity-90 mt-1">Terminales</p>
                 </button>
                 <button onclick="filtrarCategoria('carroceria')" class="grupo-categoria bg-gradient-to-br from-gray-600 to-gray-800 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-car text-4xl mb-3"></i>
                     <h3 class="font-chakra font-bold text-lg">Carrocería</h3>
-                    <p class="text-xs opacity-90 mt-1">Puertas, faros</p>
+                    <p class="text-xs opacity-90 mt-1">Chasis, estribos</p>
                 </button>
-                <button onclick="filtrarCategoria('filtros')" class="grupo-categoria bg-gradient-to-br from-teal-500 to-teal-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
-                    <i class="fas fa-oil-can text-4xl mb-3"></i>
-                    <h3 class="font-chakra font-bold text-lg">Filtros y Aceites</h3>
-                    <p class="text-xs opacity-90 mt-1">Aire, gasolina</p>
+                <button onclick="filtrarCategoria('motor')" class="grupo-categoria bg-gradient-to-br from-orange-500 to-orange-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
+                    <i class="fas fa-gas-pump text-4xl mb-3"></i>
+                    <h3 class="font-chakra font-bold text-lg">Combustible</h3>
+                    <p class="text-xs opacity-90 mt-1">Bomba gasolina</p>
                 </button>
-                <button onclick="filtrarCategoria('accesorios')" class="grupo-categoria bg-gradient-to-br from-pink-500 to-pink-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
+                <button onclick="filtrarCategoria('motor')" class="grupo-categoria bg-gradient-to-br from-teal-500 to-teal-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
+                    <i class="fas fa-temperature-high text-4xl mb-3"></i>
+                    <h3 class="font-chakra font-bold text-lg">Refrigeración</h3>
+                    <p class="text-xs opacity-90 mt-1">Radiador</p>
+                </button>
+                <button onclick="filtrarCategoria('todos')" class="grupo-categoria bg-gradient-to-br from-pink-500 to-pink-700 text-white p-6 rounded-2xl shadow-md hover:shadow-xl transition transform hover:-translate-y-1 text-center">
                     <i class="fas fa-tools text-4xl mb-3"></i>
-                    <h3 class="font-chakra font-bold text-lg">Accesorios</h3>
-                    <p class="text-xs opacity-90 mt-1">Varios</p>
+                    <h3 class="font-chakra font-bold text-lg">Ver todo</h3>
+                    <p class="text-xs opacity-90 mt-1">Todos los productos</p>
                 </button>
             </div>
         </div>
@@ -231,144 +222,206 @@
                 <p class="text-gray-600 text-lg">Cada producto lo puedes cotizar directamente por WhatsApp.</p>
             </div>
 
-            <!-- Filtro activo -->
             <div class="flex flex-wrap justify-center gap-3 mb-10">
-                <button onclick="filtrarCategoria('todos')" class="filtro-btn px-5 py-2 rounded-full bg-ladaDark text-white font-semibold text-sm">Todos</button>
-                <button onclick="filtrarCategoria('motor')" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Motor</button>
-                <button onclick="filtrarCategoria('transmision')" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Transmisión</button>
-                <button onclick="filtrarCategoria('frenos')" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Frenos</button>
-                <button onclick="filtrarCategoria('suspension')" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Suspensión</button>
-                <button onclick="filtrarCategoria('electrico')" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Eléctrico</button>
+                <button onclick="filtrarCategoria('todos', event)" class="filtro-btn px-5 py-2 rounded-full bg-ladaDark text-white font-semibold text-sm">Todos</button>
+                <button onclick="filtrarCategoria('motor', event)" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Motor</button>
+                <button onclick="filtrarCategoria('transmision', event)" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Transmisión</button>
+                <button onclick="filtrarCategoria('suspension', event)" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Suspensión</button>
+                <button onclick="filtrarCategoria('electrico', event)" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Eléctrico</button>
+                <button onclick="filtrarCategoria('carroceria', event)" class="filtro-btn px-5 py-2 rounded-full bg-white text-gray-700 border border-gray-300 font-semibold text-sm hover:bg-gray-100">Carrocería</button>
             </div>
 
             <div id="grid-productos" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
 
-                <!-- PRODUCTO 1: Motor -->
+                <!-- Cadena -->
                 <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="motor">
                     <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- 👇 REEMPLAZA ESTE ICONO por tu foto: -->
-                        <!-- <img src="imagenes/embrague.jpg" alt="Kit de Embrague Lada" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-cogs text-5xl text-gray-400"></i>
+                        <img src="imagenes/cadena.jpg" alt="Cadena Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-link text-5xl text-gray-400 absolute" style="display:none;"></i>
                         <span class="absolute top-4 left-4 bg-ladaRed text-white text-xs font-bold px-3 py-1 rounded-full">Original</span>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Kit de Embrague</h3>
+                        <h3 class="font-chakra font-bold text-lg mb-1">Cadena de Tiempo</h3>
                         <p class="text-sm text-gray-500 mb-4">Lada 2106 / 2105</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa el Kit de Embrague para Lada 2106/2105. ¿Me pueden dar precio y disponibilidad?')" 
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Cadena de Tiempo para Lada 2106/2105. ¿Precio y disponibilidad?')" 
                                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fab fa-whatsapp text-lg"></i> Cotizar
                         </button>
                     </div>
                 </div>
 
-                <!-- PRODUCTO 2: Frenos -->
-                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="frenos">
+                <!-- Chasis -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="carroceria">
                     <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/discos-freno.jpg" alt="Discos de Freno Lada Niva" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-compact-disc text-5xl text-gray-400"></i>
-                        <span class="absolute top-4 left-4 bg-ladaYellow text-ladaDark text-xs font-bold px-3 py-1 rounded-full">Oferta</span>
+                        <img src="imagenes/chasis.jpg" alt="Chasis Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-car text-5xl text-gray-400 absolute" style="display:none;"></i>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Discos de Freno</h3>
+                        <h3 class="font-chakra font-bold text-lg mb-1">Chasis</h3>
                         <p class="text-sm text-gray-500 mb-4">Lada 2121 Niva</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesan los Discos de Freno para Lada 2121 Niva. ¿Precio?')" 
+                        <button onclick="abrirWhatsApp('Hola, me interesa el Chasis para Lada 2121 Niva. ¿Precio?')" 
                                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fab fa-whatsapp text-lg"></i> Cotizar
                         </button>
                     </div>
                 </div>
 
-                <!-- PRODUCTO 3: Motor -->
+                <!-- Rótula inferior -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="suspension">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/rotula-inferior.jpg" alt="Rótula Inferior Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-car-side text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Rótula Inferior</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2106</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Rótula Inferior para Lada 2106. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Salpicaderas -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="carroceria">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/salpicaderas.jpg" alt="Salpicaderas Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-car text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Salpicaderas</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2105</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesan las Salpicaderas para Lada 2105. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Bomba de gasolina -->
                 <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="motor">
                     <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/bomba-aceite.jpg" alt="Bomba de Aceite Lada Samara" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-oil-can text-5xl text-gray-400"></i>
+                        <img src="imagenes/bomba-gasolina.png" alt="Bomba de Gasolina Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-gas-pump text-5xl text-gray-400 absolute" style="display:none;"></i>
                         <span class="absolute top-4 left-4 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">Nuevo</span>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Bomba de Aceite</h3>
-                        <p class="text-sm text-gray-500 mb-4">Lada Samara</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa la Bomba de Aceite para Lada Samara. ¿Precio y disponibilidad?')" 
-                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
-                        </button>
-                    </div>
-                </div>
-
-                <!-- PRODUCTO 4: Eléctrico -->
-                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="electrico">
-                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/bateria.jpg" alt="Batería Lada" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-car-battery text-5xl text-gray-400"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Batería 60Ah</h3>
+                        <h3 class="font-chakra font-bold text-lg mb-1">Bomba de Gasolina</h3>
                         <p class="text-sm text-gray-500 mb-4">Universal Lada</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa la Batería 60Ah para Lada. ¿Precio?')" 
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Bomba de Gasolina para Lada. ¿Precio?')" 
                                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fab fa-whatsapp text-lg"></i> Cotizar
                         </button>
                     </div>
                 </div>
 
-                <!-- PRODUCTO 5: Suspensión -->
-                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="suspension">
-                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/amortiguador.jpg" alt="Amortiguadores Lada Niva" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-car-side text-5xl text-gray-400"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Amortiguadores</h3>
-                        <p class="text-sm text-gray-500 mb-4">Lada 2121 Niva</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesan los Amortiguadores para Lada 2121 Niva. ¿Precio del par?')" 
-                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
-                        </button>
-                    </div>
-                </div>
-
-                <!-- PRODUCTO 6: Transmisión -->
-                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="transmision">
-                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/caja-cambios.jpg" alt="Kit de Caja Lada" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-gears text-5xl text-gray-400"></i>
-                    </div>
-                    <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Kit de Caja</h3>
-                        <p class="text-sm text-gray-500 mb-4">Lada 2106</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa el Kit de Caja para Lada 2106. ¿Precio?')" 
-                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
-                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
-                        </button>
-                    </div>
-                </div>
-
-                <!-- PRODUCTO 7: Motor -->
+                <!-- Carburador -->
                 <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="motor">
                     <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/radiador.jpg" alt="Radiador Lada" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-temperature-high text-5xl text-gray-400"></i>
+                        <img src="imagenes/carburador.jpg" alt="Carburador Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-cogs text-5xl text-gray-400 absolute" style="display:none;"></i>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Radiador</h3>
-                        <p class="text-sm text-gray-500 mb-4">Lada 2105</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa el Radiador para Lada 2105. ¿Precio?')" 
+                        <h3 class="font-chakra font-bold text-lg mb-1">Carburador</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2106</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa el Carburador para Lada 2106. ¿Precio?')" 
                                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fab fa-whatsapp text-lg"></i> Cotizar
                         </button>
                     </div>
                 </div>
 
-                <!-- PRODUCTO 8: Eléctrico -->
-                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="electrico">
+                <!-- Estribos -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="carroceria">
                     <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
-                        <!-- <img src="imagenes/alternador.jpg" alt="Alternador Lada" class="w-full h-full object-cover"> -->
-                        <i class="fas fa-bolt text-5xl text-gray-400"></i>
+                        <img src="imagenes/estribos.jpg" alt="Estribos Lada Niva" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-car text-5xl text-gray-400 absolute" style="display:none;"></i>
                     </div>
                     <div class="p-5">
-                        <h3 class="font-chakra font-bold text-lg mb-1">Alternador</h3>
-                        <p class="text-sm text-gray-500 mb-4">Lada Samara</p>
-                        <button onclick="abrirWhatsApp('Hola, me interesa el Alternador para Lada Samara. ¿Precio?')" 
+                        <h3 class="font-chakra font-bold text-lg mb-1">Estribos</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2121 Niva</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesan los Estribos para Lada 2121 Niva. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Kit de clutch -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="transmision">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/kit-clutch.jpg" alt="Kit de Clutch Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-gears text-5xl text-gray-400 absolute" style="display:none;"></i>
+                        <span class="absolute top-4 left-4 bg-ladaYellow text-ladaDark text-xs font-bold px-3 py-1 rounded-full">Oferta</span>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Kit de Clutch</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2106 / 2105</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa el Kit de Clutch para Lada 2106/2105. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tapa radiador -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="motor">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/tapa-radiador.jpg" alt="Tapa Radiador Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-temperature-high text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Tapa Radiador</h3>
+                        <p class="text-sm text-gray-500 mb-4">Universal Lada</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Tapa de Radiador para Lada. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Tensor ruso -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="motor">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/tensor-ruso.jpg" alt="Tensor Ruso Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-cogs text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Tensor Ruso</h3>
+                        <p class="text-sm text-gray-500 mb-4">Lada 2106</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa el Tensor Ruso para Lada 2106. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Terminal corta -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="electrico">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/terminal-corta.jpg" alt="Terminal Corta Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-bolt text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Terminal Corta</h3>
+                        <p class="text-sm text-gray-500 mb-4">Universal Lada</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Terminal Corta para Lada. ¿Precio?')" 
+                                class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
+                            <i class="fab fa-whatsapp text-lg"></i> Cotizar
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Terminal larga -->
+                <div class="producto bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition border border-gray-100" data-categoria="electrico">
+                    <div class="relative bg-gray-100 h-52 flex items-center justify-center overflow-hidden">
+                        <img src="imagenes/terminal-larga.jpg" alt="Terminal Larga Lada" class="w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';">
+                        <i class="fas fa-bolt text-5xl text-gray-400 absolute" style="display:none;"></i>
+                    </div>
+                    <div class="p-5">
+                        <h3 class="font-chakra font-bold text-lg mb-1">Terminal Larga</h3>
+                        <p class="text-sm text-gray-500 mb-4">Universal Lada</p>
+                        <button onclick="abrirWhatsApp('Hola, me interesa la Terminal Larga para Lada. ¿Precio?')" 
                                 class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 rounded-xl transition flex items-center justify-center gap-2">
                             <i class="fab fa-whatsapp text-lg"></i> Cotizar
                         </button>
@@ -413,7 +466,7 @@
         </div>
     </section>
 
-    <!-- ===== CONTACTO + DIRECCIÓN ===== -->
+    <!-- ===== CONTACTO ===== -->
     <section id="contacto" class="py-20 bg-ladaDark text-white relative overflow-hidden">
         <div class="absolute inset-0 opacity-5">
             <svg class="w-full h-full" xmlns="http://www.w3.org/2000/svg">
@@ -483,12 +536,10 @@
                     </div>
                 </div>
 
-                <!-- Mapa + CTA -->
                 <div class="bg-white text-ladaDark p-8 md:p-10 rounded-2xl shadow-2xl">
                     <h3 class="text-2xl font-chakra font-bold mb-2">Visítanos en Bogotá</h3>
                     <p class="text-gray-600 mb-6">Cl. 1b #13a-40</p>
                     
-                    <!-- Mapa embebido -->
                     <div class="rounded-xl overflow-hidden mb-6 border border-gray-200">
                         <iframe 
                             src="https://www.google.com/maps?q=Cl.+1b+%2313a-40%2C+Bogot%C3%A1&output=embed"
@@ -567,12 +618,8 @@
 
     <!-- ===== SCRIPTS ===== -->
     <script>
-        // ⚠️ IMPORTANTE: CAMBIA ESTE NÚMERO POR EL TUYO
-        // Formato: código de país + número, SIN el signo + ni espacios ni guiones.
-        // Ejemplo Colombia: 573001234567
         const WHATSAPP_NUMERO = "573175026119"; 
 
-        // Función para abrir WhatsApp con mensaje pre-escrito
         function abrirWhatsApp(mensaje) {
             const url = `https://wa.me/${WHATSAPP_NUMERO}?text=${encodeURIComponent(mensaje)}`;
             window.open(url, '_blank');
@@ -593,23 +640,20 @@
         });
 
         // Filtro por categoría
-        function filtrarCategoria(categoria) {
+        function filtrarCategoria(categoria, event) {
             const productos = document.querySelectorAll('.producto');
             const botones = document.querySelectorAll('.filtro-btn');
 
-            // Actualizar estilos de botones
             botones.forEach(btn => {
                 btn.classList.remove('bg-ladaDark', 'text-white');
                 btn.classList.add('bg-white', 'text-gray-700', 'border', 'border-gray-300');
             });
 
-            // Marcar el botón activo
-            event && event.target && event.target.classList && (() => {
+            if (event && event.target) {
                 event.target.classList.remove('bg-white', 'text-gray-700', 'border', 'border-gray-300');
                 event.target.classList.add('bg-ladaDark', 'text-white');
-            })();
+            }
 
-            // Mostrar/ocultar productos
             productos.forEach(prod => {
                 if (categoria === 'todos' || prod.dataset.categoria === categoria) {
                     prod.style.display = 'block';
@@ -618,7 +662,6 @@
                 }
             });
 
-            // Scroll suave a productos si viene de una categoría
             if (categoria !== 'todos') {
                 document.getElementById('productos').scrollIntoView({ behavior: 'smooth' });
             }
